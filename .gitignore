@@ -1,0 +1,14 @@
+# Ignore the 'build' directory
+coco/
+coco_franco/
+franco/
+results/
+runs_yolov10/
+
+build/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
