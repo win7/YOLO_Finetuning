@@ -1,9 +1,17 @@
 # Ignore the 'build' directory
 coco/
-coco_franco/
+datasets/
 franco/
+images/
 results/
-runs_yolov10/
+runs/
+runs_yolo11/
+runs_yolo26/
+
+coco2017labels-segments.zip
+
+*.pt
+*.onnx
 
 build/
 __pycache__/

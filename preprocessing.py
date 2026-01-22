@@ -7,6 +7,7 @@ def process_file(input_path, output_path):
     """
     
     processed_lines = []
+    list_classes_to_keep = [1, 4]  # classes to keep
 
     with open(input_path, "r") as f:
         for line in f:
@@ -16,14 +17,16 @@ def process_file(input_path, output_path):
             if not stripped:
                 continue
 
-            # Only keep lines that start with '1'
-            if stripped.startswith("4 "):               # YOLO-style
-                new_line = "80 " + stripped[2:]        # replace "1 "
-                processed_lines.append(new_line)
+            # Only keep lines that start with '4'
+            end = 80
+            for k, item in enumerate(list_classes_to_keep):
+                if stripped.startswith(f"{item} "):               # YOLO-style
+                    new_line = f"{end + k} {stripped[2:]}"       # replace "4 "
+                    processed_lines.append(new_line)
 
-            elif stripped.startswith("4"):              # general case
-                new_line = "80" + stripped[1:]
-                processed_lines.append(new_line)
+                elif stripped.startswith(f"{item}"):              # general case
+                    new_line = f"{end + k}{stripped[1:]}"
+                    processed_lines.append(new_line)
 
             # Any other line is skipped (deleted)
 
@@ -57,7 +60,7 @@ def process_folder(input_folder, output_folder):
 # Example usage
 # ----------------------------
 if __name__ == "__main__":
-    input_folder = "data/test/labels_x"   # change to your folder
-    output_folder = "{}_".format(input_folder)  # will be created
+    input_folder = "franco/valid/labels"   # change to your folder
+    output_folder = "{}_filter".format(input_folder)  # will be created
 
     process_folder(input_folder, output_folder)

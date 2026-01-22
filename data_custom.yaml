@@ -10,9 +10,9 @@
 
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 # path: trees.v7i.yolov9 # dataset root dir
-train: coco_franco/train/images # train images (relative to 'path') 118287 images
-val: coco_franco/valid/images # val images (relative to 'path') 5000 images
-test: coco_franco/test/images # 20288 of 40670 images, submit to https://competitions.codalab.org/competitions/20794
+train: datasets/coco_franco/train/images # train images (relative to 'path') 118287 images
+val: datasets/coco_franco/valid/images # val images (relative to 'path') 5000 images
+test: datasets/coco_franco/test/images # 20288 of 40670 images, submit to https://competitions.codalab.org/competitions/20794
 
 # Classes
 names:
@@ -96,7 +96,8 @@ names:
   77: teddy bear
   78: hair drier
   79: toothbrush
-  80: pile
+  80: module
+  81: pile
 
 # Download script/URL (optional)
 download: |

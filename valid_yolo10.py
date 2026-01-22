@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 # Load trained YOLOv10 model
-model = YOLO("runs_yolov10/custom_class_training2/weights/best.pt")
+model = YOLO("runs_yolov10/custom_class_training/weights/best.pt")
 
 print(model.names)
 print("Número total de clases:", len(model.names))
