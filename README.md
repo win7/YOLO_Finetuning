@@ -1,10 +1,10 @@
 
 Python 3.10
-- yolo export model=yolo11n.pt format=onnx      # export official model
-- yolo export model=path/to/best.pt format=onnx # export custom trained model
 
+Activate 
+- conda activate yolo
 
-1. Download coco: run script
+Download coco: run script
 
 Create filter labels (franco dataset)
 - Run preprocessing.py
@@ -24,3 +24,8 @@ Modify data_custom.yaml
 
 Run train
 - run train_yolo.py
+
+
+Export
+- yolo export model=yolo11n.pt format=onnx      # export official model
+- yolo export model=path/to/best.pt format=onnx # export custom trained model

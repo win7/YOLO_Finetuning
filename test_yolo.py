@@ -3,7 +3,7 @@ from ultralytics import YOLO
 def main():
     # Load trained YOLOv10 model
     # model = YOLO("yolov10s.pt")  # Load a pretrained YOLOv10s model
-    model = YOLO("/home/ealvarez/Project/Yolo_Test/runs_yolo11/custom_class_training/weights/best.pt")
+    model = YOLO("/home/ealvarez/Project/Yolo_Test/runs/detect/runs_yolo26/custom_class_training/weights/best.pt")
 
     # Inference
     image_list = [
@@ -21,7 +21,7 @@ def main():
         source=image_list,
         device=0,
         save=True,                     # Save images with bounding boxes
-        project="results",
+        project="inference",
         name="test_all_classes",
         exist_ok=True
     )
